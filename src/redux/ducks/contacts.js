@@ -1,23 +1,21 @@
 const initialState = {
   items: [],
   loading: false,
-
 };
-
 
 export default function contacts(state = initialState, action) {
   switch (action.type) {
     case 'contacts/load/start':
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case 'contacts/load/success':
       return {
         ...state,
         loading: false,
-        items: action.payload
-      }
+        items: action.payload,
+      };
     default:
       return state;
   }

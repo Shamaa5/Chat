@@ -1,29 +1,29 @@
 .messages-search-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
 }
-input {
-    width: 100%;
-    height: 30px;
-    padding: 5px 40px 5px 40px;
-    /*border: none;*/
+.message-search-input {
+  width: 100%;
+  height: 30px;
+  padding: 5px 40px 5px 40px;
+  /*border: none;*/
 }
 .search-logo {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    top: 8px;
-    left: 10px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 8px;
+  left: 10px;
 }
 .settings-logo {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    top: 8px;
-    right: 10px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
 }
 img {
-    width: 100%;
-    pointer-events: none;
+  width: 100%;
+  pointer-events: none;
 }

@@ -13,13 +13,16 @@ function SearchMessages(props) {
       <input
         type="search"
         maxLength={7}
+        className={s['message-search-input']}
       />
       <div className={s['settings-logo']}>
-        <img src='http://s1.iconbird.com/ico/2013/9/452/w512h5121380477044settings.png'
-             alt='settings' />
+        <img
+          src="http://s1.iconbird.com/ico/2013/9/452/w512h5121380477044settings.png"
+          alt="settings"
+        />
       </div>
     </div>
-  )
+  );
 }
 
 export default SearchMessages;

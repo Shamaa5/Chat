@@ -1,0 +1,14 @@
+.social-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.social-title {
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}

@@ -6,9 +6,10 @@ function Message(props) {
       <div className={s['sent-message']}>
         <div>message</div>
         <div className={s['message-info']}>
-          <div>9:00 <span>✓</span></div>
+          <div>
+            9:00 <span>✓</span>
+          </div>
         </div>
-
       </div>
       <div className={s['incoming-message']}>
         <div className={s.avatar}>Ц</div>
