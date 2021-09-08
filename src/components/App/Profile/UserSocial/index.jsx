@@ -15,18 +15,18 @@ function UserMedia() {
       </div>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faInstagram} />{' '}
-          <span>
-            <i>
-              <a href="#">Kuduzow</a>
-            </i>
-          </span>
+          <a href="#!">
+            <FontAwesomeIcon icon={faInstagram} />{' '}
+            <span>
+              <i>Kuduzow</i>
+            </span>
+          </a>
         </li>
         <li>
           <FontAwesomeIcon icon={faTwitter} />{' '}
           <span>
             <i>
-              <a href="#">Kuduzow</a>
+              <a href="#!">Kuduzow</a>
             </i>
           </span>
         </li>
@@ -34,7 +34,7 @@ function UserMedia() {
           <FontAwesomeIcon icon={faFacebook} />{' '}
           <span>
             <i>
-              <a href="#">Kuduzow</a>
+              <a href="#!">Kuduzow</a>
             </i>
           </span>
         </li>

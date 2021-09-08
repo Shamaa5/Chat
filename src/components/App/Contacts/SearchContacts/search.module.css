@@ -2,11 +2,16 @@
   position: relative;
 }
 .search {
-  width: 100%;
+  width: 80%;
   height: 30px;
-  padding: 5px 10px 5px 40px;
+  padding: 5px 10px 5px 50px;
   border: none;
+  outline: none;
 }
+.search:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
 .search-logo {
   width: 15px;
   height: 15px;

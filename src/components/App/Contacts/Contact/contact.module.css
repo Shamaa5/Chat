@@ -1,10 +1,15 @@
 .contacts-container {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 90%;
+  height: 80vh;
   padding: 10px 10px;
+  overflow: scroll;
+}
+.contacts-container::-webkit-scrollbar {
+  width: 0;
 }
 li {
   width: 100%;
@@ -21,20 +26,30 @@ li {
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-right: 10px;
+  align-self: flex-start;
 }
 .contact {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+.contact:hover {
+  transition-delay: 10ms;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+.contact-description {
+  width: 60%;
 }
 .name {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0;
+  padding: 2px 2px;
 }
 .lust-message {
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.time {
 }

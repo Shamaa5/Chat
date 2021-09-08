@@ -26,7 +26,7 @@ export const loadContacts = () => {
     dispatch({
       type: 'contacts/load/start',
     });
-    fetch('https://api.intocode.ru:8001/api/profile')
+    fetch('https://api.intocode.ru:8001/api/contacts')
       .then((response) => response.json())
       .then((json) => {
         dispatch({
