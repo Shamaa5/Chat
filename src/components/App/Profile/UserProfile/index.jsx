@@ -1,7 +1,12 @@
 import React from 'react';
 import s from './profile.module.css';
-import { faEnvelope, faPhone, faVideo } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhone,
+  faVideo,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 function UserProfile(props) {
   return (
@@ -13,13 +18,20 @@ function UserProfile(props) {
       </div>
       <div className={s['types-of-call']}>
         <div className={s['types-of-call--logo call']}>
-          <FontAwesomeIcon icon={faPhone} />
+          <a href="#!">
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
         </div>
+
         <div className={s['types-of-call--logo video']}>
-          <FontAwesomeIcon icon={faVideo} />
+          <a href="#!">
+            <FontAwesomeIcon icon={faVideo} />
+          </a>
         </div>
         <div className={s['types-of-call--logo message']}>
-          <FontAwesomeIcon icon={faEnvelope} />
+          <a href="#!">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
         </div>
       </div>
     </div>

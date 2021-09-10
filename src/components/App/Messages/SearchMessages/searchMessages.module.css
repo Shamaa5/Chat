@@ -1,13 +1,23 @@
 .messages-search-container {
   position: relative;
   width: 100%;
+  height: 30px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
 }
 .message-search-input {
-  width: 100%;
+  width: 200px;
   height: 30px;
-  padding: 5px 40px 5px 40px;
-  /*border: none;*/
+  padding: 5px 10px 5px 40px;
+  position: absolute;
+  left: 0;
+  border: none;
+}
+input:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 .search-logo {
   width: 15px;
@@ -16,6 +26,7 @@
   top: 8px;
   left: 10px;
 }
+
 .settings-logo {
   width: 15px;
   height: 15px;
@@ -26,4 +37,26 @@
 img {
   width: 100%;
   pointer-events: none;
+}
+h4 {
+  padding: 0;
+  margin: 0 5px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.user-name {
+  display: flex;
+  margin: auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.online {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #28de2e;
+}
+.button {
+  cursor: pointer;
 }

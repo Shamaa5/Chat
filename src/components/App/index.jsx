@@ -17,7 +17,9 @@ useEffect(() => {
       <Route path='/'>
         <Contacts />
       </Route>
-      <Messages />
+      <Route path='/:id?'>
+        <Messages />
+      </Route>
       <Profile />
     </div>
   );

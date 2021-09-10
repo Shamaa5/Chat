@@ -1,5 +1,9 @@
 .messages-container {
   height: 100%;
-  min-width: 50%;
+  flex-grow: 1;
   box-sizing: border-box;
+  overflow: scroll;
+}
+.messages-container::-webkit-scrollbar {
+  width: 0;
 }

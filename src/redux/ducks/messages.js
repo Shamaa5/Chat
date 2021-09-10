@@ -12,7 +12,7 @@ export const loadMessages = (id) => {
     dispatch({
       type: 'contacts/load/start',
     });
-    fetch('https://api.intocode.ru:8001/api/contacts')
+    fetch(`https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/contactId/${id}`)
       .then((response) => response.json())
       .then((json) => {
         dispatch({

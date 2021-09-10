@@ -1,5 +1,11 @@
 import React from 'react';
 import s from './message.module.css';
+import { faCheck, } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// <FontAwesomeIcon icon={faCheckDouble} />
+// <FontAwesomeIcon icon={faHourglass} />
+
 function Message(props) {
   return (
     <div className={s['message-container']}>
@@ -7,7 +13,7 @@ function Message(props) {
         <div>message</div>
         <div className={s['message-info']}>
           <div>
-            9:00 <span>✓</span>
+            9:00 <FontAwesomeIcon icon={faCheck} />
           </div>
         </div>
       </div>

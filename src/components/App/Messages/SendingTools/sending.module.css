@@ -11,17 +11,28 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
   border: none;
 }
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
 .add-message {
   width: 100%;
 }
 .add-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 16px;
+  top: 17px;
   right: 40px;
+  transform: rotate(-45deg);
 }
 .microphone-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: 20px;
   height: 20px;
@@ -30,4 +41,7 @@
 }
 textarea::placeholder {
   padding: 12px 15px;
+}
+.pointer {
+  cursor: pointer;
 }

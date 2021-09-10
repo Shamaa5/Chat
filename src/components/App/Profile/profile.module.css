@@ -1,4 +1,8 @@
 .profile-container {
   width: 20%;
   padding: 50px 25px;
+
+}
+.hide {
+  display: none;
 }

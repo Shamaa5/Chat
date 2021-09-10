@@ -1,6 +1,8 @@
 const initialState = {
   items: [],
   loading: false,
+  filter: '',
+  contactProfileIsOpen: false,
 };
 
 export default function contacts(state = initialState, action) {
@@ -15,6 +17,22 @@ export default function contacts(state = initialState, action) {
         ...state,
         loading: false,
         items: action.payload,
+      };
+    case 'find/contact':
+      return {
+        ...state,
+        loading: false,
+        filter: action.payload,
+      };
+    case 'open/profile':
+      return {
+        ...state,
+        contactProfileIsOpen: true,
+      };
+    case 'close/profile':
+      return {
+        ...state,
+        contactProfileIsOpen: false,
       };
     default:
       return state;
@@ -34,5 +52,22 @@ export const loadContacts = () => {
           payload: json,
         });
       });
+  };
+};
+export const findContact = (text) => {
+  return {
+    type: 'find/contact',
+    payload: text,
+  };
+};
+export const openContactProfile = () => {
+  return {
+    type: 'open/profile',
+  };
+};
+
+export const closeContactProfile = () => {
+  return {
+    type: 'close/profile',
   };
 };
