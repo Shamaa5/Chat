@@ -21,7 +21,6 @@ function SendingTools(props) {
           onChange={e => createMessage(e.target.value)}
         />
       </div>
-
       <div className={s['add-logo']}>
         <FontAwesomeIcon icon={faPaperclip} />
       </div>

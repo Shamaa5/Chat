@@ -6,15 +6,15 @@ import {
   faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function UserProfile(props) {
   return (
     <div className={s['profile-container']}>
       <div className={s.avatar}>Ц</div>
       <div className={s.username}>
-        <h3>Цугаев Альви</h3>
-        <p>@kuduzow</p>
+        <h3>{props.contact.fullname}</h3>
+        <p>@{props.contact.username}</p>
       </div>
       <div className={s['types-of-call']}>
         <div className={s['types-of-call--logo call']}>
@@ -36,6 +36,11 @@ function UserProfile(props) {
       </div>
     </div>
   );
+}
+UserProfile.propTypes = {
+  contact: PropTypes.object,
+  fullname: PropTypes.string,
+  username: PropTypes.string
 }
 
 export default UserProfile;

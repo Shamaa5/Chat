@@ -1,6 +1,7 @@
 .social-container {
     width: 100%;
     margin-bottom: 20px;
+    height: 170px;
 }
 .social-title {
     margin-bottom: 30px;
@@ -19,4 +20,7 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 26px;
+}
+.none {
+    display: none;
 }

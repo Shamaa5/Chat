@@ -44,7 +44,7 @@ li {
   box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
 }
 .contact:hover {
-  transition-delay: 10ms;
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 .contact-description {
@@ -57,11 +57,17 @@ li {
   letter-spacing: 0;
   padding: 2px 2px;
 }
-.lust-message {
+.last-message {
   overflow: hidden;
+  width: 70px;
   text-overflow: ellipsis;
+  font-size: 13px;
+  color: grey;
 }
 a {
   text-decoration: none;
   color: black;
+}
+.time {
+  font-size: 13px;
 }

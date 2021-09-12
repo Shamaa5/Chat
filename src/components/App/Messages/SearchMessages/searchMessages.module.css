@@ -60,3 +60,6 @@ h4 {
 .button {
   cursor: pointer;
 }
+.none {
+  display: none;
+}

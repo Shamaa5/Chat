@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './media.module.css'
 
-function UserMedia() {
+function UserMedia(props) {
   return (
     <div className={s['media-container']}>
       <div className={s['media-title']}>
@@ -10,7 +10,7 @@ function UserMedia() {
       <div className={s['media-content-container']}>
         <div className={s['media-content-file']}/>
         <div className={s['media-content-name']}>
-          asdasd.pdf
+          file.pdf
         </div>
       </div>
     </div>

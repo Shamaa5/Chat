@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { application, messages, contacts } from './ducks';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger/src';
+import { createLogger } from "redux-logger/src";
 
 const logger = createLogger({
   diff: true,

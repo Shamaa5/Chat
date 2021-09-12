@@ -13,7 +13,7 @@ function SearchContacts() {
     dispatch(findContact(e.target.value))
   }
   const filteredContacts = contacts.filter( contact => {
- return  (contact.fullname.indexOf(filter) > -1)
+    return  (contact.fullname.indexOf(filter))
   })
   return (
     <div className={s['search-container']}>

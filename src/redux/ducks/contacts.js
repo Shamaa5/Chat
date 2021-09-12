@@ -3,6 +3,7 @@ const initialState = {
   loading: false,
   filter: '',
   contactProfileIsOpen: false,
+  filteredContact: [],
 };
 
 export default function contacts(state = initialState, action) {
@@ -71,3 +72,4 @@ export const closeContactProfile = () => {
     type: 'close/profile',
   };
 };
+

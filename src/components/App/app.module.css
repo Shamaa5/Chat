@@ -7,3 +7,96 @@
   overflow: hidden;
   margin: auto;
 }
+
+.cssload-container{
+  text-align: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(175, 212, 222, 0.5);
+}
+
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgb(204,204,204);
+  border-left-color: rgba(0,0,0,0.98);
+  border-radius: 799px;
+  -o-border-radius: 799px;
+  -ms-border-radius: 799px;
+  -webkit-border-radius: 799px;
+  -moz-border-radius: 799px;
+}
+
+.cssload-whirlpool {
+  margin: -20px 0 0 -20px;
+  height: 40px;
+  width: 40px;
+  animation: cssload-rotate 650ms linear infinite;
+  -o-animation: cssload-rotate 650ms linear infinite;
+  -ms-animation: cssload-rotate 650ms linear infinite;
+  -webkit-animation: cssload-rotate 650ms linear infinite;
+  -moz-animation: cssload-rotate 650ms linear infinite;
+}
+
+.cssload-whirlpool::before {
+  content: "";
+  margin: -18px 0 0 -18px;
+  height: 35px;
+  width: 35px;
+  animation: cssload-rotate 650ms linear infinite;
+  -o-animation: cssload-rotate 650ms linear infinite;
+  -ms-animation: cssload-rotate 650ms linear infinite;
+  -webkit-animation: cssload-rotate 650ms linear infinite;
+  -moz-animation: cssload-rotate 650ms linear infinite;
+}
+
+.cssload-whirlpool::after {
+  content: "";
+  margin: -23px 0 0 -23px;
+  height: 45px;
+  width: 45px;
+  animation: cssload-rotate 1300ms linear infinite;
+  -o-animation: cssload-rotate 1300ms linear infinite;
+  -ms-animation: cssload-rotate 1300ms linear infinite;
+  -webkit-animation: cssload-rotate 1300ms linear infinite;
+  -moz-animation: cssload-rotate 1300ms linear infinite;
+}
+
+
+
+@keyframes cssload-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate {
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}

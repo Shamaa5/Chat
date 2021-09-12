@@ -1,22 +1,37 @@
-const initialState = {};
+const initialState = {
+  items: [],
+  loading: false,
+  findMessage: '',
+};
 
 export default function messages(state = initialState, action) {
   switch (action.type) {
+    case 'messages/load/start':
+      return {
+        ...state,
+        loading: true,
+      }
+    case 'messages/load/success':
+      return {
+        ...state,
+        loading: false,
+        items: action.payload
+      }
     default:
       return state;
   }
 }
 
-export const loadMessages = (id) => {
+export const loadMessages = (myId, id) => {
   return (dispatch) => {
     dispatch({
-      type: 'contacts/load/start',
+      type: 'messages/load/start',
     });
-    fetch(`https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/contactId/${id}`)
+    fetch(`https://api.intocode.ru:8001/api/messages/${myId}/${id}`)
       .then((response) => response.json())
       .then((json) => {
         dispatch({
-          type: 'contacts/load/success',
+          type: 'messages/load/success',
           payload: json,
         });
       });

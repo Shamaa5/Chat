@@ -3,7 +3,8 @@ aside {
   padding-top: 10px;
   align-self: flex-start;
   margin-right: 20px;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .aside {
