@@ -10,13 +10,14 @@ import { loadProfile } from '../../redux/ducks/application';
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.contacts.loading);
+  const loadingContacts = useSelector((state) => state.contacts.loading);
+
   useEffect(() => {
     dispatch(loadContacts());
     dispatch(loadProfile());
   }, [dispatch]);
 
-  if (loading) {
+  if (loadingContacts) {
     return (
       <div className={s['cssload-container']}>
         <h2>Идет загрузка</h2>

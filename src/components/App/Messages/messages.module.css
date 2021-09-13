@@ -1,12 +1,10 @@
 .messages-container {
-  height: 100%;
-  flex-grow: 1;
+  flex: 1 1 auto;
   box-sizing: border-box;
-  overflow: scroll;
+  height: 100%;
+  padding: 0 50px;
 }
-.messages-container::-webkit-scrollbar {
-  width: 0;
-}
+
 .choose-contact {
   position: absolute;
   top: 50%;

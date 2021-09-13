@@ -1,20 +1,26 @@
 .message-container {
-  min-height: 79vh;
-  width: 100%;
+  height: 79vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: scroll;
+  list-style-type: none;
+  position: relative;
+  box-sizing: border-box;
 }
+.message-container::-webkit-scrollbar {
+  width: 0;
+}
+
 .sent-message {
   border-radius: 10px 10px 0 10px;
-  min-height: 40px;
-  min-width: 200px;
   background-color: purple;
+  max-width: 40%;
   color: white;
   align-self: flex-end;
   padding: 5px 10px;
-  display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 .message-info {
   align-self: flex-end;
@@ -22,13 +28,14 @@
 }
 .incoming-message-info {
   background-color: azure;
-  min-width: 100px;
+  max-width: 40%;
   display: flex;
   flex-direction: column;
   padding: 5px 5px;
+  margin-bottom: 20px;
 }
 .incoming-message {
-  display: flex;
+  display: inline-flex;
   align-self: flex-start;
   align-items: center;
   min-height: 40px;
@@ -49,4 +56,144 @@
 .missing-call {
   align-self: center;
   text-align: center;
+}
+.preloader-container {
+  margin: auto;
+}
+#inTurnFadingTextG{
+  width:234px;
+  margin:auto;
+}
+
+.inTurnFadingTextG{
+  color:rgb(78,204,158);
+  font-family:Arial;
+  font-size:24px;
+  text-decoration:none;
+  font-weight:normal;
+  font-style:normal;
+  float:left;
+  animation-name:bounce_inTurnFadingTextG;
+  -o-animation-name:bounce_inTurnFadingTextG;
+  -ms-animation-name:bounce_inTurnFadingTextG;
+  -webkit-animation-name:bounce_inTurnFadingTextG;
+  -moz-animation-name:bounce_inTurnFadingTextG;
+  animation-duration:1.361s;
+  -o-animation-duration:1.361s;
+  -ms-animation-duration:1.361s;
+  -webkit-animation-duration:1.361s;
+  -moz-animation-duration:1.361s;
+  animation-iteration-count:infinite;
+  -o-animation-iteration-count:infinite;
+  -ms-animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+  -moz-animation-iteration-count:infinite;
+  animation-direction:normal;
+  -o-animation-direction:normal;
+  -ms-animation-direction:normal;
+  -webkit-animation-direction:normal;
+  -moz-animation-direction:normal;
+}
+
+#inTurnFadingTextG_1{
+  animation-delay:0.4825s;
+  -o-animation-delay:0.4825s;
+  -ms-animation-delay:0.4825s;
+  -webkit-animation-delay:0.4825s;
+  -moz-animation-delay:0.4825s;
+}
+#inTurnFadingTextG_2{
+  animation-delay:0.589s;
+  -o-animation-delay:0.589s;
+  -ms-animation-delay:0.589s;
+  -webkit-animation-delay:0.589s;
+  -moz-animation-delay:0.589s;
+}
+#inTurnFadingTextG_3{
+  animation-delay:0.6855s;
+  -o-animation-delay:0.6855s;
+  -ms-animation-delay:0.6855s;
+  -webkit-animation-delay:0.6855s;
+  -moz-animation-delay:0.6855s;
+}
+#inTurnFadingTextG_4{
+  animation-delay:0.782s;
+  -o-animation-delay:0.782s;
+  -ms-animation-delay:0.782s;
+  -webkit-animation-delay:0.782s;
+  -moz-animation-delay:0.782s;
+}
+#inTurnFadingTextG_5{
+  animation-delay:0.8785s;
+  -o-animation-delay:0.8785s;
+  -ms-animation-delay:0.8785s;
+  -webkit-animation-delay:0.8785s;
+  -moz-animation-delay:0.8785s;
+}
+#inTurnFadingTextG_6{
+  animation-delay:0.975s;
+  -o-animation-delay:0.975s;
+  -ms-animation-delay:0.975s;
+  -webkit-animation-delay:0.975s;
+  -moz-animation-delay:0.975s;
+}
+#inTurnFadingTextG_7{
+  animation-delay:1.0715s;
+  -o-animation-delay:1.0715s;
+  -ms-animation-delay:1.0715s;
+  -webkit-animation-delay:1.0715s;
+  -moz-animation-delay:1.0715s;
+}
+
+
+
+
+@keyframes bounce_inTurnFadingTextG{
+  0%{
+    color:rgba(35,186,95,0.97);
+  }
+
+  100%{
+    color:rgb(255,255,255);
+  }
+}
+
+@-o-keyframes bounce_inTurnFadingTextG{
+  0%{
+    color:rgba(35,186,95,0.97);
+  }
+
+  100%{
+    color:rgb(255,255,255);
+  }
+}
+
+@-ms-keyframes bounce_inTurnFadingTextG{
+  0%{
+    color:rgba(35,186,95,0.97);
+  }
+
+  100%{
+    color:rgb(255,255,255);
+  }
+}
+
+@-webkit-keyframes bounce_inTurnFadingTextG{
+  0%{
+    color:rgba(35,186,95,0.97);
+  }
+
+  100%{
+    color:rgb(255,255,255);
+  }
+}
+
+@-moz-keyframes bounce_inTurnFadingTextG{
+  0%{
+    color:rgba(35,186,95,0.97);
+  }
+
+  100%{
+    color:rgb(255,255,255);
+  }
 }

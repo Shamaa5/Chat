@@ -3,7 +3,6 @@ import s from './profile.module.css';
 import UserProfile from './UserProfile';
 import UserMedia from './UserMedia';
 import UserSocial from './UserSocial';
-// import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -13,9 +12,7 @@ function Profile() {
   );
   const params = useParams()
   const contacts = useSelector(state => state.contacts.items)
-  const filteredContacts = contacts.filter(contact => {
-   return   contact._id === params.id
-  })
+  const filteredContacts = contacts.filter(contact => contact._id === params.id)
   if (!openProfile) {
     return <div className={s.hide} />;
   }

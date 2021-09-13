@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 function UserProfile(props) {
   return (
     <div className={s['profile-container']}>
-      <div className={s.avatar}>Ц</div>
+      <div className={s.avatar}>{props.contact.fullname[0]}</div>
       <div className={s.username}>
         <h3>{props.contact.fullname}</h3>
         <p>@{props.contact.username}</p>
