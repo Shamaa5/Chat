@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './message.module.css'
+import s from './message.module.css';
 
 function SystemMessage(props) {
   return (
@@ -15,4 +15,4 @@ export default SystemMessage;
 SystemMessage.propTypes = {
   message: PropTypes.object,
   content: PropTypes.string,
-}
+};

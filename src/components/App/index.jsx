@@ -15,13 +15,13 @@ function App() {
   useEffect(() => {
     dispatch(loadContacts());
     dispatch(loadProfile());
-  }, [dispatch]);
+  }, [dispatch, postMessage]);
 
   if (loadingContacts) {
     return (
       <div className={s['cssload-container']}>
         <h2>Идет загрузка</h2>
-        <div className={s['cssload-whirlpool']}/>
+        <div className={s['cssload-whirlpool']} />
       </div>
     );
   }

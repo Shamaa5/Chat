@@ -40,7 +40,7 @@ function UserProfile(props) {
 UserProfile.propTypes = {
   contact: PropTypes.object,
   fullname: PropTypes.string,
-  username: PropTypes.string
-}
+  username: PropTypes.string,
+};
 
 export default UserProfile;

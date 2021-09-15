@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './media.module.css'
+import s from './media.module.css';
 
 function UserMedia(props) {
   return (
@@ -8,10 +8,8 @@ function UserMedia(props) {
         <h3>Media</h3>
       </div>
       <div className={s['media-content-container']}>
-        <div className={s['media-content-file']}/>
-        <div className={s['media-content-name']}>
-          file.pdf
-        </div>
+        <div className={s['media-content-file']} />
+        <div className={s['media-content-name']}>file.pdf</div>
       </div>
     </div>
   );

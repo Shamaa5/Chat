@@ -66,7 +66,7 @@ export const newMessageSend = (content, id, myId) => {
         time: new Date(),
         type: 'text',
         contactId: id,
-        tempId: Math.random()*1000,
+        tempId: Math.random() * 100,
         toUserId: id,
         myId: myId,
         read: false,
@@ -85,3 +85,7 @@ export const newMessageSend = (content, id, myId) => {
       });
   };
 };
+
+export const findMessage = () => {
+
+}

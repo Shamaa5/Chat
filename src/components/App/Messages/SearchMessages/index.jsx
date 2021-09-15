@@ -14,34 +14,33 @@ function SearchMessages(props) {
     (state) => state.contacts.contactProfileIsOpen,
   );
   const dispatch = useDispatch();
-  const params = useParams()
+  const params = useParams();
   const closeProfile = () => {
     dispatch(closeContactProfile());
   };
   const openProfile = () => {
     dispatch(openContactProfile());
   };
-  const contact = useSelector(state => state.contacts.items)
-  const filteredContact = contact
-    .filter( value => value._id === params.id)
+  const contact = useSelector((state) => state.contacts.items);
+  const filteredContact = contact.filter((value) => value._id === params.id);
 
-  const name = filteredContact.map (name => name.fullname)
-  const online = filteredContact.map(online => online.online)
+  const name = filteredContact.map((name) => name.fullname);
+  const online = filteredContact.map((online) => online.online);
   return (
     <div className={s['messages-search-container']}>
-        <input
-          type="search"
-          maxLength={7}
-          className={s['message-search-input']}
-          placeholder='Search messages'
-        />
-        <div className={s['search-logo']}>
-          <FontAwesomeIcon icon={faSearch} />
-        </div>
+      <input
+        type="search"
+        maxLength={7}
+        className={s['message-search-input']}
+        placeholder="Search messages"
+      />
+      <div className={s['search-logo']}>
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
 
       <div className={s['user-name']}>
         <h4>{name}</h4>
-        <div className={(online[0]) ? s.online : s.none} />
+        <div className={online[0] ? s.online : s.none} />
       </div>
       {contactProfile ? (
         <div className={s['settings-logo']}>

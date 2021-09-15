@@ -3,27 +3,25 @@ const initialState = {
   loading: false,
 };
 
-
 export default function application(state = initialState, action) {
   switch (action.type) {
     case 'profile/load/start':
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case 'profile/load/success':
       return {
         ...state,
         loading: false,
-        items: action.payload
-      }
+        items: action.payload,
+      };
     default:
       return state;
   }
 }
 
-
-export  const loadProfile = () => {
+export const loadProfile = () => {
   return (dispatch) => {
     dispatch({
       type: 'profile/load/start',
@@ -37,4 +35,4 @@ export  const loadProfile = () => {
         });
       });
   };
-}
+};

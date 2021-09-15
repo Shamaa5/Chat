@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   loading: false,
-  filter: '',
+  filter: "",
   contactProfileIsOpen: false,
   filteredContact: [],
 };
@@ -72,4 +72,3 @@ export const closeContactProfile = () => {
     type: 'close/profile',
   };
 };
-

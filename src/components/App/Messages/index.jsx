@@ -4,19 +4,19 @@ import Message from './Message';
 import SearchMessages from './SearchMessages';
 import SendingTools from './SendingTools';
 import { useDispatch, useSelector } from 'react-redux';
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../../redux/ducks/messages';
 
 function Messages() {
   const dispatch = useDispatch();
   const params = useParams();
-  const myId = '5f2ea3801f986a01cefc8bcd'
+  const myId = '5f2ea3801f986a01cefc8bcd';
 
-  useEffect(()=> {
-        if (params.id !== undefined)  {
-          dispatch(loadMessages(myId, params.id));
-        }
-  },[dispatch, params.id, myId])
+  useEffect(() => {
+    if (params.id !== undefined) {
+      dispatch(loadMessages(myId, params.id));
+    }
+  }, [dispatch, params.id, myId]);
 
   if (!params.id) {
     return (

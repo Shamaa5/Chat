@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './search.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { findContact } from '../../../../redux/ducks/contacts';
@@ -6,15 +6,15 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function SearchContacts() {
-  const dispatch = useDispatch()
-  const filter = useSelector(state => state.contacts.filter)
-  const contacts = useSelector(state => state.contacts.items)
+  const dispatch = useDispatch();
+  const filter = useSelector((state) => state.contacts.filter);
+  const contacts = useSelector((state) => state.contacts.items);
   const handleFindContact = (e) => {
-    dispatch(findContact(e.target.value))
-  }
-  const filteredContacts = contacts.filter( contact => {
-    return  (contact.fullname.indexOf(filter))
-  })
+    dispatch(findContact(e.target.value));
+  };
+
+
+
   return (
     <div className={s['search-container']}>
       <div className={s['search-logo']}>
@@ -31,6 +31,5 @@ function SearchContacts() {
     </div>
   );
 }
-
 
 export default SearchContacts;

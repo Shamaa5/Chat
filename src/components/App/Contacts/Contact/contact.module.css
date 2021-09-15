@@ -60,6 +60,7 @@ li {
 .last-message {
   overflow: hidden;
   width: 70px;
+  height: 16px;
   text-overflow: ellipsis;
   font-size: 13px;
   color: grey;
