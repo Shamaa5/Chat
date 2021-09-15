@@ -3,7 +3,6 @@ const initialState = {
   loading: false,
   filter: "",
   contactProfileIsOpen: false,
-  filteredContact: [],
 };
 
 export default function contacts(state = initialState, action) {

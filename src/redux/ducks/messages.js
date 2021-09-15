@@ -28,6 +28,11 @@ export default function messages(state = initialState, action) {
         loading: false,
         items: [...state.items, action.payload],
       };
+    case 'find/message':
+      return {
+        ...state,
+        findMessage: action.payload
+      }
     default:
       return state;
   }
@@ -86,6 +91,9 @@ export const newMessageSend = (content, id, myId) => {
   };
 };
 
-export const findMessage = () => {
-
+export const findMessage = (text) => {
+  return {
+    type: 'find/message',
+    payload: text,
+  };
 }
