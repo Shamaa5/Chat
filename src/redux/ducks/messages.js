@@ -20,11 +20,20 @@ export default function messages(state = initialState, action) {
     case 'comment/upload/start':
       return {
         ...state,
+        items: [...state.items, {...action.payload, sending: true}],
       };
     case 'comment/upload/success':
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items:  state.items.map(message => {
+          if (message.tempId === action.payload.tempId){
+            return {
+              ...action.payload,
+              sending: false
+            }
+          }
+          return message
+        })
       };
     case 'find/message':
       return {
@@ -71,19 +80,21 @@ export const scroll = () => {
 };
 
 export const newMessageSend = (content, id, myId) => {
+  const tempId = parseInt(Math.random()*100)
   return (dispatch) => {
-    dispatch({ type: 'comment/upload/start' });
+    dispatch({ type: 'comment/upload/start', payload: {
+      tempId: tempId, content: content,  myId: myId, type: 'text', time: new Date(), contactId: id, read: false,
+    }});
     fetch(`https://api.intocode.ru:8001/api/messages`, {
       method: 'POST',
       body: JSON.stringify({
         content: content,
         time: new Date(),
         type: 'text',
+        tempId: tempId,
         contactId: id,
-        tempId: Math.random() * 100,
-        toUserId: id,
         myId: myId,
-        read: false,
+        read: false
       }),
       headers: {
         'Content-type': 'application/json',
@@ -93,7 +104,7 @@ export const newMessageSend = (content, id, myId) => {
       .then((json) => {
         dispatch({
           type: 'comment/upload/success',
-          payload: json,
+          payload: {...json, tempId: tempId},
         });
         scroll();
       });

@@ -12,7 +12,8 @@ function Contact() {
   const filteredContacts = contacts.filter((contact) => {
     return (
       contact.fullname.indexOf(filter) > -1 ||
-      contact.fullname.toLowerCase().indexOf(filter) > -1
+      contact.fullname.toLowerCase().indexOf(filter) > -1 ||
+      contact.fullname.toUpperCase().indexOf(filter) > -1
     );
   });
   return (
