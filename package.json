@@ -21,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-intl": "^5.20.10",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "dayjs": "^1.10.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -51,7 +52,6 @@
     ]
   },
   "devDependencies": {
-    "dayjs": "^1.10.7",
     "eslint-plugin-react": "^7.25.1",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
