@@ -3,7 +3,7 @@ import s from './messages.module.css';
 import Message from './Message';
 import SearchMessages from './SearchMessages';
 import SendingTools from './SendingTools';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../../redux/ducks/messages';
 

@@ -3,14 +3,18 @@ import s from './contact.module.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Contact(props) {
+function Contact() {
   const contacts = useSelector((state) => state.contacts.items);
-
+  const filteredContacts = useSelector(state => state.contacts.filteredContacts)
+  const filtered = contacts.filter( contact => contact.fullname.indexOf(filteredContacts) > -1 )
+  console.log(filteredContacts);
   return (
     <div>
       <ul className={s['contacts-container']}>
-        {contacts.map((contact) => {
+        {filtered.map((contact) => {
           return (
             <li key={contact._id + 'key'}>
               <Link to={`/${contact._id}`}>
@@ -25,9 +29,15 @@ function Contact(props) {
                       {contact.lastMessage?.content}
                     </div>
                   </div>
-                  <div className={s.time}>
-                    {dayjs(contact.lastMessage?.time).format('HH:mm')}
+                  <div className={s['container-for-hover']}>
+                    <div className={s.time}>
+                      {dayjs(contact.lastMessage?.time).format('HH:mm')}
+                    </div>
+                    <div className={s.ellipsis}>
+                      <FontAwesomeIcon icon={faEllipsisH} />
+                    </div>
                   </div>
+
                 </div>
               </Link>
             </li>

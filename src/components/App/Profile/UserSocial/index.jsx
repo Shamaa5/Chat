@@ -10,15 +10,13 @@ import PropTypes from 'prop-types';
 
 function UserSocial(props) {
   if (props.contact.socials === undefined) {
-    {
-      return (
-        <div className={s['social-container']}>
-          <div className={s['social-title']}>
-            <h3>Social</h3>
-          </div>
+    return (
+      <div className={s['social-container']}>
+        <div className={s['social-title']}>
+          <h3>Social</h3>
         </div>
-      );
-    }
+      </div>
+    );
   } else {
     return (
       <div className={s['social-container']}>
@@ -27,8 +25,13 @@ function UserSocial(props) {
         </div>
         <ul>
           <li className={props.contact.socials.instagram ? s.li : s.none}>
-            <a href="#!">
-              <FontAwesomeIcon icon={faInstagram} />{' '}
+            <a
+              href
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <FontAwesomeIcon icon={faInstagram} />
               <span>
                 <i>{props.contact.socials.instagram}</i>
               </span>
@@ -38,7 +41,14 @@ function UserSocial(props) {
             <FontAwesomeIcon icon={faTwitter} />{' '}
             <span>
               <i>
-                <a href="#!">{props.contact.socials.twitter}</a>
+                <a
+                  href
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {props.contact.socials.twitter}
+                </a>
               </i>
             </span>
           </li>
@@ -46,7 +56,14 @@ function UserSocial(props) {
             <FontAwesomeIcon icon={faFacebook} />{' '}
             <span>
               <i>
-                <a href="#!">{props.contact.socials.facebook}</a>
+                <a
+                  href
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {props.contact.socials.facebook}
+                </a>
               </i>
             </span>
           </li>

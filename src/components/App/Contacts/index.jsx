@@ -4,6 +4,7 @@ import Contact from './Contact';
 import SearchContacts from './SearchContacts';
 
 function Contacts() {
+
   return (
     <aside className={s.aside}>
       <SearchContacts />

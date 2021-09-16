@@ -8,6 +8,7 @@ import {
   openContactProfile,
 } from '../../../../redux/ducks/contacts';
 import { useParams } from 'react-router-dom';
+import { findMessage } from '../../../../redux/ducks/messages';
 
 function SearchMessages(props) {
   const contactProfile = useSelector(
@@ -21,11 +22,21 @@ function SearchMessages(props) {
   const openProfile = () => {
     dispatch(openContactProfile());
   };
+  const filter = useSelector((state) => state.messages.findMessage);
   const contact = useSelector((state) => state.contacts.items);
   const filteredContact = contact.filter((value) => value._id === params.id);
-
   const name = filteredContact.map((name) => name.fullname);
   const online = filteredContact.map((online) => online.online);
+  const contacts = useSelector((state) => state.contacts.items);
+  const filteredContacts = contacts.filter(contact => {
+    if (contact.fullName !== undefined)
+      return (
+        contact.fullName.indexOf(filter) > -1
+      );
+  });
+  const handleFindMessage = (e) => {
+    dispatch(findMessage(e.target.value))
+  }
   return (
     <div className={s['messages-search-container']}>
       <input
@@ -33,6 +44,8 @@ function SearchMessages(props) {
         maxLength={7}
         className={s['message-search-input']}
         placeholder="Search messages"
+        value={filter}
+        onChange={handleFindMessage}
       />
       <div className={s['search-logo']}>
         <FontAwesomeIcon icon={faSearch} />
