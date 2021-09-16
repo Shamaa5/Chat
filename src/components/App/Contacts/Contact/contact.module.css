@@ -72,3 +72,14 @@ a {
 .time {
   font-size: 13px;
 }
+.ellipsis {
+  width: 30px;
+  display: none;
+}
+.contact:hover .time{
+  display: none;
+  cursor: pointer;
+}
+.contact:hover .ellipsis{
+  display: block;
+}

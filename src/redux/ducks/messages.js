@@ -20,18 +20,27 @@ export default function messages(state = initialState, action) {
     case 'comment/upload/start':
       return {
         ...state,
-        loading: true,
       };
     case 'comment/upload/success':
       return {
         ...state,
-        loading: false,
         items: [...state.items, action.payload],
       };
     case 'find/message':
       return {
         ...state,
         findMessage: action.payload
+      }
+    case   'message/deleting/start':
+      return {
+        ...state,
+        loading: true
+      }
+    case 'message/deleting/success':
+      return {
+        ...state,
+        loading: false,
+        items: [...state.items, a]
       }
     default:
       return state;

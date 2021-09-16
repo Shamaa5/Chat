@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     dispatch(loadContacts());
     dispatch(loadProfile());
-  }, [dispatch, postMessage]);
+  }, [dispatch]);
 
   if (loadingContacts) {
     return (
