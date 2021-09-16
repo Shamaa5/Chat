@@ -14,6 +14,7 @@
   position: absolute;
   left: 0;
   border: none;
+  outline: none;
 }
 input:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;

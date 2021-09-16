@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import s from './sending.module.css';
 import {
   faArrowCircleRight,
-  faCheck,
   faMicrophone,
   faPaperclip,
 } from '@fortawesome/free-solid-svg-icons';

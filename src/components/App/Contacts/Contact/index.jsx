@@ -8,13 +8,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Contact() {
   const contacts = useSelector((state) => state.contacts.items);
-  const filteredContacts = useSelector(state => state.contacts.filteredContacts)
-  const filtered = contacts.filter( contact => contact.fullname.indexOf(filteredContacts) > -1 )
-  console.log(filteredContacts);
+  const filter = useSelector((state) => state.contacts.filter);
+  const filteredContacts = contacts.filter((contact) => {
+    return (
+      contact.fullname.indexOf(filter) > -1 ||
+      contact.fullname.toLowerCase().indexOf(filter) > -1
+    );
+  });
   return (
     <div>
       <ul className={s['contacts-container']}>
-        {filtered.map((contact) => {
+        {filteredContacts.map((contact) => {
           return (
             <li key={contact._id + 'key'}>
               <Link to={`/${contact._id}`}>
@@ -37,7 +41,6 @@ function Contact() {
                       <FontAwesomeIcon icon={faEllipsisH} />
                     </div>
                   </div>
-
                 </div>
               </Link>
             </li>

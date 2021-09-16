@@ -76,10 +76,10 @@ a {
   width: 30px;
   display: none;
 }
-.contact:hover .time{
+.contact:hover .time {
   display: none;
   cursor: pointer;
 }
-.contact:hover .ellipsis{
+.contact:hover .ellipsis {
   display: block;
 }

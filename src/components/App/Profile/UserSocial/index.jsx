@@ -25,46 +25,21 @@ function UserSocial(props) {
         </div>
         <ul>
           <li className={props.contact.socials.instagram ? s.li : s.none}>
-            <a
-              href
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-              <span>
-                <i>{props.contact.socials.instagram}</i>
-              </span>
-            </a>
+            <FontAwesomeIcon icon={faInstagram} className={s['social-icons']} />
+            <span>
+              <i>{props.contact.socials.instagram}</i>
+            </span>
           </li>
           <li className={props.contact.socials.twitter ? s.li : s.none}>
-            <FontAwesomeIcon icon={faTwitter} />{' '}
+            <FontAwesomeIcon icon={faTwitter} className={s['social-icons']} />
             <span>
-              <i>
-                <a
-                  href
-                  onClick={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  {props.contact.socials.twitter}
-                </a>
-              </i>
+              <i>{props.contact.socials.twitter}</i>
             </span>
           </li>
           <li className={props.contact.socials.facebook ? s.li : s.none}>
-            <FontAwesomeIcon icon={faFacebook} />{' '}
+            <FontAwesomeIcon icon={faFacebook} className={s['social-icons']} />
             <span>
-              <i>
-                <a
-                  href
-                  onClick={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  {props.contact.socials.facebook}
-                </a>
-              </i>
+              <i>{props.contact.socials.facebook}</i>
             </span>
           </li>
         </ul>

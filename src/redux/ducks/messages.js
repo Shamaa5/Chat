@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   loading: false,
-  findMessage: '',
+  filter: '',
 };
 
 export default function messages(state = initialState, action) {
@@ -29,19 +29,19 @@ export default function messages(state = initialState, action) {
     case 'find/message':
       return {
         ...state,
-        findMessage: action.payload
-      }
-    case   'message/deleting/start':
+        filter: action.payload,
+      };
+    case 'message/deleting/start':
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case 'message/deleting/success':
       return {
         ...state,
         loading: false,
-        items: [...state.items, action.payload]
-      }
+        items: [...state.items, action.payload],
+      };
     default:
       return state;
   }
@@ -105,4 +105,4 @@ export const findMessage = (text) => {
     type: 'find/message',
     payload: text,
   };
-}
+};

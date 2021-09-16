@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   loading: false,
-  filteredContacts: "",
+  filter: '',
   contactProfileIsOpen: false,
 };
 
@@ -21,7 +21,7 @@ export default function contacts(state = initialState, action) {
     case 'find/contact':
       return {
         ...state,
-        filteredContacts: action.payload
+        filter: action.payload,
       };
     case 'open/profile':
       return {

@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function SearchContacts() {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.contacts.filter);
+
   const handleFindContact = (e) => {
     dispatch(findContact(e.target.value));
   };
-
 
   return (
     <div className={s['search-container']}>
@@ -19,7 +19,7 @@ function SearchContacts() {
         <FontAwesomeIcon icon={faSearch} />
       </div>
       <input
-        type="text"
+        type="search"
         placeholder="Search contacts"
         className={s.search}
         maxLength={7}

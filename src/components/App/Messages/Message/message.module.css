@@ -23,7 +23,12 @@
   box-sizing: content-box;
   margin-bottom: 20px;
   word-break: break-word;
-
+}
+.message-icon {
+  margin-left: 5px;
+}
+.time {
+  color: #c0cddc;
 }
 .message-info {
   align-self: center;

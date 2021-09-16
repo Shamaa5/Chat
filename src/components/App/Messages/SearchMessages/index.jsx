@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import s from './searchMessages.module.css';
 import { faCog, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,16 +27,10 @@ function SearchMessages(props) {
   const filteredContact = contact.filter((value) => value._id === params.id);
   const name = filteredContact.map((name) => name.fullname);
   const online = filteredContact.map((online) => online.online);
-  const contacts = useSelector((state) => state.contacts.items);
-  const filteredContacts = contacts.filter(contact => {
-    if (contact.fullName !== undefined)
-      return (
-        contact.fullName.indexOf(filter) > -1
-      );
-  });
+
   const handleFindMessage = (e) => {
-    dispatch(findMessage(e.target.value))
-  }
+    dispatch(findMessage(e.target.value));
+  };
   return (
     <div className={s['messages-search-container']}>
       <input
