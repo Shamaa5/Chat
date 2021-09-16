@@ -49,8 +49,8 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: [...state.items, action.payload],
-      };
+        items:  state.items.filter(message =>  message._id !== action.payload)
+      }
     default:
       return state;
   }
@@ -80,7 +80,7 @@ export const scroll = () => {
 };
 
 export const newMessageSend = (content, id, myId) => {
-  const tempId = parseInt(Math.random()*100)
+  const tempId = Math.random()*100
   return (dispatch) => {
     dispatch({ type: 'comment/upload/start', payload: {
       tempId: tempId, content: content,  myId: myId, type: 'text', time: new Date(), contactId: id, read: false,
@@ -117,3 +117,18 @@ export const findMessage = (text) => {
     payload: text,
   };
 };
+export const deleteMessage = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'messages/delete/start',
+    });
+    fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
+      method: 'DELETE',
+    })
+      .then(( ) => {
+        dispatch({
+          type: 'messages/delete/success',
+          payload: id,
+        });
+      })
+  }}

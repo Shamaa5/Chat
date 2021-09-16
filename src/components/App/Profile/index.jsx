@@ -4,7 +4,7 @@ import UserProfile from './UserProfile';
 import UserMedia from './UserMedia';
 import UserSocial from './UserSocial';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 function Profile() {
   const openProfile = useSelector(
@@ -16,20 +16,26 @@ function Profile() {
     (contact) => contact._id === params.id,
   );
   if (!openProfile) {
-    return <div className={s.hide} />;
+    return (
+        <div className={s['profile-container']}>
+            <div className={s.hide} />
+        </div>
+
+    );
   }
   return (
-    <div className={s['profile-container']}>
-      {filteredContacts.map((contact) => {
-        return (
-          <div key={contact.id + 'profile'}>
-            <UserProfile contact={contact} />
-            <UserSocial contact={contact} />
-            <UserMedia contact={contact} />
-          </div>
-        );
-      })}
-    </div>
+        <div className={s['profile-container']}>
+          {filteredContacts.map((contact) => {
+            return (
+              <div key={contact.id + 'profile'}>
+                <UserProfile contact={contact} />
+                <UserSocial contact={contact} />
+                <UserMedia contact={contact} />
+              </div>
+            );
+          })}
+        </div>
+
   );
 }
 
