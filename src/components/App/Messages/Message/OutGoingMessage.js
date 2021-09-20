@@ -4,12 +4,18 @@ import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCheckDouble, faHourglass } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteMessage } from '../../../../redux/ducks/messages';
 
 
 function OutGoingMessage(props) {
+  const dispatch = useDispatch()
+  const handleDeleteMessage = () => {
+    dispatch(deleteMessage(props.message._id))
+  }
   return (
     <div className={s['sent-message']} key={props.message._id + 'message'}>
-      <div>{props.message.content}</div>
+      <div className={s['message-content']}>{props.message.content}</div>
       <div className={s['message-info']}>
         <div className={s.time}>
           {dayjs(props.message.time).format('HH:mm')}
@@ -20,6 +26,7 @@ function OutGoingMessage(props) {
           }
         </div>
       </div>
+      <div className={s['delete-message']} onClick={handleDeleteMessage}>Х</div>
     </div>
   );
 }
