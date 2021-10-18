@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import s from './app.module.css';
+import styles from './app.module.css';
 import Contacts from './Contacts';
 import Messages from './Messages';
 import Profile from './Profile';
@@ -19,17 +19,15 @@ function App() {
 
   if (loadingContacts) {
     return (
-      <div className={s['cssload-container']}>
+      <div className={styles['cssload-container']}>
         <h2>Идет загрузка</h2>
-        <div className={s['cssload-whirlpool']} />
+        <div className={styles['cssload-whirlpool']} />
       </div>
     );
   }
   return (
-    <div className={s.container}>
-      <Route path="/">
-        <Contacts />
-      </Route>
+    <div className={styles.container}>
+      <Contacts />
       <Route path="/:id?">
         <Messages />
         <Profile />

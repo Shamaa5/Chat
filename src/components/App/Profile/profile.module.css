@@ -1,7 +1,6 @@
 .profile-container {
-  width: 20%;
   padding: 50px 25px;
+  transition: 400ms;
+  width: 200px;
 }
-.hide {
-  display: none;
-}
+

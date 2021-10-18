@@ -1,10 +1,11 @@
 import React from 'react';
-import s from './profile.module.css';
+import styles from './profile.module.css';
 import UserProfile from './UserProfile';
 import UserMedia from './UserMedia';
 import UserSocial from './UserSocial';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Transition } from 'react-transition-group';
 
 function Profile() {
   const openProfile = useSelector(
@@ -16,22 +17,20 @@ function Profile() {
     (contact) => contact._id === params.id,
   );
   if (!openProfile) {
-    return (
-        <div className={s.hide} />
-    );
+    return null;
   }
   return (
-    <div className={s['profile-container']}>
-      {filteredContacts.map((contact) => {
-        return (
-          <div key={contact.id + 'profile'}>
-            <UserProfile contact={contact} />
-            <UserSocial contact={contact} />
-            <UserMedia contact={contact} />
-          </div>
-        );
-      })}
-    </div>
+       <div className={styles['profile-container']}>
+        {filteredContacts.map((contact) => {
+          return (
+            <div key={contact.id + 'profile'}>
+              <UserProfile contact={contact} />
+              <UserSocial contact={contact} />
+              <UserMedia contact={contact} />
+            </div>
+          );
+        })}
+      </div>
   );
 }
 

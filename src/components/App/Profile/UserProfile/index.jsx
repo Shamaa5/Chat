@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './profile.module.css';
+import styles from './profile.module.css';
 import {
   faEnvelope,
   faPhone,
@@ -10,25 +10,25 @@ import PropTypes from 'prop-types';
 
 function UserProfile(props) {
   return (
-    <div className={s['profile-container']}>
-      <div className={s.avatar}>{props.contact.fullname[0]}</div>
-      <div className={s.username}>
+    <div className={styles['profile-container']}>
+      <div className={styles.avatar}>{props.contact.fullname[0]}</div>
+      <div className={styles.username}>
         <h3>{props.contact.fullname}</h3>
         <p>@{props.contact.username}</p>
       </div>
-      <div className={s['types-of-call']}>
-        <div className={s['types-of-call--logo call']}>
+      <div className={styles['types-of-call']}>
+        <div className={styles['types-of-call--logo call']}>
           <a href="#!">
             <FontAwesomeIcon icon={faPhone} />
           </a>
         </div>
 
-        <div className={s['types-of-call--logo video']}>
+        <div className={styles['types-of-call--logo video']}>
           <a href="#!">
             <FontAwesomeIcon icon={faVideo} />
           </a>
         </div>
-        <div className={s['types-of-call--logo message']}>
+        <div className={styles['types-of-call--logo message']}>
           <a href="#!">
             <FontAwesomeIcon icon={faEnvelope} />
           </a>

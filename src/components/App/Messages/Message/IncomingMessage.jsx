@@ -1,15 +1,15 @@
 import React from 'react';
-import s from './message.module.css';
+import styles from './message.module.css';
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
 function IncomingMessage(props) {
   return (
-    <div className={s['incoming-message']} key={props.message._id + 'message'}>
-      <div className={s.avatar}>К</div>
-      <div className={s['incoming-message-info']}>
-        <div className={s['last-message']}>{props.message.content}</div>
-        <div className={s['message-info']}>
+    <div className={styles['incoming-message']} key={props.message._id + 'message'}>
+      <div className={styles.avatar}>К</div>
+      <div className={styles['incoming-message-info']}>
+        <div className={styles['last-message']}>{props.message.content}</div>
+        <div className={styles['message-info']}>
           {dayjs(props.message.time).format('HH:mm')}
         </div>
       </div>

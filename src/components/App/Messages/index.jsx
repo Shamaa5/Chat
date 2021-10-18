@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import s from './messages.module.css';
+import styles from './messages.module.css';
 import Message from './Message';
-import SearchMessages from './SearchMessages';
 import SendingTools from './SendingTools';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../../redux/ducks/messages';
+import Header from './Header';
 
 function Messages() {
   const dispatch = useDispatch();
@@ -16,19 +16,19 @@ function Messages() {
     if (params.id !== undefined) {
       dispatch(loadMessages(myId, params.id));
     }
-  }, [dispatch, params.id, myId]);
+  }, [dispatch, params, myId]);
 
   if (!params.id) {
     return (
-      <div className={s['choose-contact']}>
+      <div className={styles['choose-contact']}>
         <h3>Выберите чат в списке слева</h3>
       </div>
     );
   }
 
   return (
-    <div className={s['messages-container']}>
-      <SearchMessages />
+    <div className={styles['messages-container']}>
+      <Header />
       <Message />
       <SendingTools />
     </div>

@@ -1,5 +1,5 @@
 const initialState = {
-  items: {},
+  profile: {},
   loading: false,
 };
 
@@ -14,7 +14,7 @@ export default function application(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: action.payload,
+        profile: action.payload,
       };
     default:
       return state;

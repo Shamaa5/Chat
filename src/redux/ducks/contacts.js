@@ -53,7 +53,7 @@ export const loadContacts = () => {
       });
   };
 };
-export const findContact = (text) => {
+export const setFilterContacts = (text) => {
   return {
     type: 'find/contact',
     payload: text,

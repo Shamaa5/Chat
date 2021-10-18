@@ -1,3 +1,4 @@
+import { scroll } from '../../helpers/dom';
 const initialState = {
   items: [],
   loading: false,
@@ -49,7 +50,7 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items:  state.items.filter(message =>  message._id !== action.payload)
+        items:  state.items.filter(message => message._id !== action.payload)
       }
     default:
       return state;
@@ -72,12 +73,7 @@ export const loadMessages = (myId, id) => {
       });
   };
 };
-export const scroll = () => {
-  if (document.getElementById('scroll_page')) {
-    const message = document.getElementById('scroll_page');
-    message.scrollTop = message.scrollHeight;
-  }
-};
+
 
 export const newMessageSend = (content, id, myId) => {
   const tempId = Math.random()*100

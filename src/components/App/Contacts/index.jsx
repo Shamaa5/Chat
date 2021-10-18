@@ -1,13 +1,13 @@
 import React from 'react';
-import s from './contacts.module.css';
-import Contact from './Contact';
+import styles from './contacts.module.css';
+import ListOfContacts from './ListOfContacts';
 import SearchContacts from './SearchContacts';
 
 function Contacts() {
   return (
-    <aside className={s.aside}>
+    <aside className={styles.aside}>
       <SearchContacts />
-      <Contact />
+      <ListOfContacts />
     </aside>
   );
 }

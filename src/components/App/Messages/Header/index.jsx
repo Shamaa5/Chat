@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './searchMessages.module.css';
+import styles from './searchMessages.module.css';
 import { faCog, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { findMessage } from '../../../../redux/ducks/messages';
 
-function SearchMessages(props) {
+function Header(props) {
   const contactProfile = useSelector(
     (state) => state.contacts.contactProfileIsOpen,
   );
@@ -32,37 +32,37 @@ function SearchMessages(props) {
     dispatch(findMessage(e.target.value));
   };
   return (
-    <div className={s['messages-search-container']}>
+    <div className={styles['messages-search-container']}>
       <input
         type="search"
         maxLength={7}
-        className={s['message-search-input']}
+        className={styles['message-search-input']}
         placeholder="Search messages"
         value={filter}
         onChange={handleFindMessage}
       />
-      <div className={s['search-logo']}>
+      <div className={styles['search-logo']}>
         <FontAwesomeIcon icon={faSearch} />
       </div>
 
-      <div className={s['user-name']}>
+      <div className={styles['user-name']}>
         <h4>{name}</h4>
-        <div className={online[0] ? s.online : s.none} />
+        <div className={online[0] ? styles.online : undefined} />
       </div>
       {contactProfile ? (
-        <div className={s['settings-logo']}>
+        <div className={styles['settings-logo']}>
           <FontAwesomeIcon
             icon={faCog}
             onClick={closeProfile}
-            className={s.button}
+            className={styles.button}
           />
         </div>
       ) : (
-        <div className={s['settings-logo']}>
+        <div className={styles['settings-logo']}>
           <FontAwesomeIcon
             icon={faUser}
             onClick={openProfile}
-            className={s.button}
+            className={styles.button}
           />
         </div>
       )}
@@ -70,4 +70,4 @@ function SearchMessages(props) {
   );
 }
 
-export default SearchMessages;
+export default Header;

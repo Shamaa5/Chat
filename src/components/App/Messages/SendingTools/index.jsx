@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import s from './sending.module.css';
+import styles from './sending.module.css';
 import {
   faArrowCircleRight,
   faMicrophone,
@@ -23,26 +23,26 @@ function SendingTools(props) {
     setMessage('');
   };
   return (
-    <div className={s.tools}>
-      <div className={s['add-message']}>
+    <div className={styles.tools}>
+      <div className={styles['add-message']}>
         <textarea
-          className={s['add-comment-area']}
+          className={styles['add-comment-area']}
           placeholder="Введите сообщение"
           value={message}
           onChange={createMessage}
         />
       </div>
-      <div className={s['add-logo']}>
+      <div className={styles['add-logo']}>
         <FontAwesomeIcon icon={faPaperclip} />
       </div>
       <div
-        className={s['microphone-logo']}
-        onClick={message.length !== 0 ? sendMessage : null}
+        className={styles['microphone-logo']}
+        onClick={message.length !== 0 ? sendMessage : undefined}
       >
         {message.length === 0 ? (
           <FontAwesomeIcon icon={faMicrophone} />
         ) : (
-          <FontAwesomeIcon className={s.pointer} icon={faArrowCircleRight} />
+          <FontAwesomeIcon className={styles.pointer} icon={faArrowCircleRight} />
         )}
       </div>
     </div>
