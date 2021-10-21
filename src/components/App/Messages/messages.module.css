@@ -1,8 +1,11 @@
 .messages-container {
-  flex: 1  1 auto;
-  box-sizing: border-box;
+  flex: auto;
+  width: 50%;
+  box-sizing: content-box;
   height: 100%;
-  padding: 0 50px;
+  padding: 0 15px;
+  background-color: #fefefe;
+  transition: 0.3s;
 }
 
 .choose-contact {

@@ -42,7 +42,10 @@ function SendingTools(props) {
         {message.length === 0 ? (
           <FontAwesomeIcon icon={faMicrophone} />
         ) : (
-          <FontAwesomeIcon className={styles.pointer} icon={faArrowCircleRight} />
+          <FontAwesomeIcon
+            className={styles.pointer}
+            icon={faArrowCircleRight}
+          />
         )}
       </div>
     </div>

@@ -16,7 +16,7 @@ function Messages() {
     if (params.id !== undefined) {
       dispatch(loadMessages(myId, params.id));
     }
-  }, [dispatch, params, myId]);
+  }, [dispatch, params.id, myId]);
 
   if (!params.id) {
     return (
@@ -25,7 +25,6 @@ function Messages() {
       </div>
     );
   }
-
   return (
     <div className={styles['messages-container']}>
       <Header />

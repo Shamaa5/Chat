@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './contact.module.css';
 import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,12 +8,15 @@ import PropTypes from 'prop-types';
 
 function Contact(props) {
   return (
-    <li>
-      <Link to={`/${props.contact._id}`}>
+    <NavLink
+      to={`/${props.contact._id}`}
+      activeClassName={styles.activeContact}
+    >
+      <li>
         <div className={styles.contact}>
           <div className={styles.avatar}>
             {props.contact.fullname[0]}
-            {props.contact.online && <div className={styles.online}/>}
+            {props.contact.online && <div className={styles.online} />}
           </div>
           <div className={styles['contact-description']}>
             <div className={styles.name}>{props.contact.fullname}</div>
@@ -30,8 +33,8 @@ function Contact(props) {
             </div>
           </div>
         </div>
-      </Link>
-    </li>
+      </li>
+    </NavLink>
   );
 }
 

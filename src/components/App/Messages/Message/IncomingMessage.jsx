@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 
 function IncomingMessage(props) {
   return (
-    <div className={styles['incoming-message']} key={props.message._id + 'message'}>
+    <div
+      className={styles['incoming-message']}
+      key={props.message._id + 'message'}
+    >
       <div className={styles.avatar}>К</div>
       <div className={styles['incoming-message-info']}>
         <div className={styles['last-message']}>{props.message.content}</div>

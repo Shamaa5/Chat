@@ -1,5 +1,5 @@
 .message-container {
-  height: 79vh;
+  height: 86vh;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -63,12 +63,11 @@
   margin-right: 15px;
 }
 .delete-message {
- position: absolute;
+  position: absolute;
   top: 5px;
   right: 8px;
   font-size: 10px;
   cursor: pointer;
-
 }
 .missing-call {
   align-self: center;

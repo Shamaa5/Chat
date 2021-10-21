@@ -5,7 +5,6 @@ import UserMedia from './UserMedia';
 import UserSocial from './UserSocial';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Transition } from 'react-transition-group';
 
 function Profile() {
   const openProfile = useSelector(
@@ -20,17 +19,21 @@ function Profile() {
     return null;
   }
   return (
-       <div className={styles['profile-container']}>
-        {filteredContacts.map((contact) => {
-          return (
-            <div key={contact.id + 'profile'}>
-              <UserProfile contact={contact} />
-              <UserSocial contact={contact} />
-              <UserMedia contact={contact} />
-            </div>
-          );
-        })}
-      </div>
+    <div
+      className={`${styles['profile-container']} ${
+        openProfile ? styles.open : undefined
+      }`}
+    >
+      {filteredContacts.map((contact) => {
+        return (
+          <div key={contact.id}>
+            <UserProfile contact={contact} />
+            <UserSocial contact={contact} />
+            <UserMedia contact={contact} />
+          </div>
+        );
+      })}
+    </div>
   );
 }
 

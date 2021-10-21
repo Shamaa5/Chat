@@ -10,13 +10,13 @@ function ListOfContacts() {
     return contacts.filter((contact) => {
       return contact.fullname.toLowerCase().indexOf(filter.toLowerCase()) > -1;
     });
-  } );
+  });
 
   return (
     <div>
       <ul className={styles['contacts-container']}>
         {contacts.map((contact) => {
-          return <Contact contact={contact} key={contact._id}/>;
+          return <Contact contact={contact} key={contact._id} />;
         })}
       </ul>
     </div>

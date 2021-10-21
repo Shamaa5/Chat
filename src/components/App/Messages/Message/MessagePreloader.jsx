@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './message.module.css';
 
-function MessagePreloader(props) {
+function MessagePreloader() {
   return (
     <div className={styles['message-container']}>
       <div className={styles['preloader-container']}>

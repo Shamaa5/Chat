@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './search.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import {  setFilterContacts } from '../../../../redux/ducks/contacts';
+import { setFilterContacts } from '../../../../redux/ducks/contacts';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

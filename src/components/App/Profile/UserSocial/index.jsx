@@ -25,19 +25,28 @@ function UserSocial(props) {
         </div>
         <ul>
           <li className={props.contact.socials.instagram && styles.li}>
-            <FontAwesomeIcon icon={faInstagram} className={styles['social-icons']} />
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className={styles['social-icons']}
+            />
             <span>
               <i>{props.contact.socials.instagram}</i>
             </span>
           </li>
           <li className={props.contact.socials.twitter && styles.li}>
-            <FontAwesomeIcon icon={faTwitter} className={styles['social-icons']} />
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className={styles['social-icons']}
+            />
             <span>
               <i>{props.contact.socials.twitter}</i>
             </span>
           </li>
           <li className={props.contact.socials.facebook && styles.li}>
-            <FontAwesomeIcon icon={faFacebook} className={styles['social-icons']} />
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className={styles['social-icons']}
+            />
             <span>
               <i>{props.contact.socials.facebook}</i>
             </span>
