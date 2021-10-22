@@ -8,7 +8,7 @@ function SearchMessages() {
   const handleFindMessage = (e) => {
     dispatch(SetFilterMessage(e.target.value));
   };
-  const filter = useSelector((state) => state.messages.findMessage);
+  const filter = useSelector((state) => state.messages.filter);
   return (
     <input
       type="search"

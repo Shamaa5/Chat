@@ -26,7 +26,7 @@ function Profile() {
     >
       {filteredContacts.map((contact) => {
         return (
-          <div key={contact.id}>
+          <div key={contact.id + 'profile'}>
             <UserProfile contact={contact} />
             <UserSocial contact={contact} />
             <UserMedia contact={contact} />
