@@ -4,8 +4,7 @@ import OutGoingMessage from './OutGoingMessage';
 import PropTypes from 'prop-types';
 
 function Mess(props) {
-  const myId = '5f2ea3801f986a01cefc8bcd';
-  if (props.message.toUserId !== myId) {
+  if (props.message.toUserId !== props.myId) {
     return (
       <OutGoingMessage
         message={props.message}
@@ -23,5 +22,6 @@ function Mess(props) {
 Mess.propTypes = {
   message: PropTypes.object,
   toUserId: PropTypes.string,
+  myId: PropTypes.string,
 };
 export default Mess;

@@ -3,32 +3,16 @@
   font-family: Roboto, serif;
   overflow: hidden;
   box-sizing: border-box;
-  width: 350px;
   background-color: rgba(185, 185, 185, 0.31);
+  transition: 0.7s;
+  transform-origin: right;
+  transform: scaleX(0);
+  width: 0;
+  height: 100vh;
 }
 .open {
-  transition: 0.3s;
-  animation: opened 400ms linear;
-}
-.close {
-  transition: 0.3s;
-  animation: close 400ms linear;
-}
-
-@keyframes opened {
-  from {
-    width: 50px;
-  }
-  to {
-    width: 350px;
-  }
-}
-@keyframes close {
-  from {
-    width: 350px;
-  }
-  to {
-    width: 50px;
-    display: none;
-  }
+  transform-origin: right;
+  transform: scaleX(1);
+  overflow-y: scroll;
+  width: 20%;
 }

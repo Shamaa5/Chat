@@ -3,9 +3,11 @@ import styles from './message.module.css';
 import { useSelector } from 'react-redux';
 import MessagePreloader from './MessagePreloader';
 import MessagesFilter from './MessagesFilter';
+import PropTypes from 'prop-types';
 
-function Message() {
+function Messages(props) {
   const loading = useSelector((state) => state.messages.loading);
+
   const messages = useSelector((state) => {
     let messages = state.messages.items;
     let filter = state.messages.filter;
@@ -20,10 +22,18 @@ function Message() {
   return (
     <div className={styles['message-container']} id="scroll_page">
       {messages.map((message) => {
-        return <MessagesFilter message={message} key={message._id} />;
+        return (
+          <MessagesFilter
+            message={message}
+            myId={props.myId}
+            key={message._id}
+          />
+        );
       })}
     </div>
   );
 }
-
-export default Message;
+Messages.propTypes = {
+  myId: PropTypes.string,
+};
+export default Messages;

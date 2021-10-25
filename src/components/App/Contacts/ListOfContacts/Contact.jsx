@@ -12,7 +12,7 @@ function Contact(props) {
       to={`/${props.contact._id}`}
       activeClassName={styles.activeContact}
     >
-      <li>
+      <li className={styles.contactLi}>
         <div className={styles.contact}>
           <div className={styles.avatar}>
             {props.contact.fullname[0]}

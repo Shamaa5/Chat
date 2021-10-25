@@ -3,6 +3,22 @@ const initialState = {
   loading: false,
 };
 
+export const loadProfile = () => {
+  return (dispatch) => {
+    dispatch({
+      type: 'profile/load/start',
+    });
+    fetch('https://api.intocode.ru:8001/api/profile')
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: 'profile/load/success',
+          payload: json,
+        });
+      });
+  };
+};
+
 export default function application(state = initialState, action) {
   switch (action.type) {
     case 'profile/load/start':
@@ -20,19 +36,3 @@ export default function application(state = initialState, action) {
       return state;
   }
 }
-
-export const loadProfile = () => {
-  return (dispatch) => {
-    dispatch({
-      type: 'profile/load/start',
-    });
-    fetch('https://api.intocode.ru:8001/api/profile')
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({
-          type: 'profile/load/success',
-          payload: json,
-        });
-      });
-  };
-};

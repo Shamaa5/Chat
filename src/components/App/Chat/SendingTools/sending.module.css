@@ -1,6 +1,7 @@
 .tools {
   box-sizing: border-box;
   position: relative;
+  width: 100%;
 }
 .add-comment-area {
   width: 100%;

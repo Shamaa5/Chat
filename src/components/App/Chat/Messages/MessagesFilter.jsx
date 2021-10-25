@@ -8,14 +8,16 @@ function MessagesFilter(props) {
     return (
       <SystemMessage
         message={props.message}
+        myId={props.myId}
         key={props.message._id + 'system'}
       />
     );
   }
-  return <Mess message={props.message} />;
+  return <Mess message={props.message} myId={props.myId} />;
 }
 MessagesFilter.propTypes = {
   message: PropTypes.object,
   type: PropTypes.string,
+  myId: PropTypes.string,
 };
 export default MessagesFilter;

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import styles from './app.module.css';
 import Contacts from './Contacts';
-import Messages from './Messages';
 import Profile from './Profile';
-import { loadContacts } from '../../redux/ducks/contacts';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { loadProfile } from '../../redux/ducks/application';
+import Chat from './Chat';
+import { loadContacts } from '../../redux/ducks/contacts';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function App() {
     <div className={styles.container}>
       <Contacts />
       <Route path="/:id?">
-        <Messages />
+        <Chat />
         <Profile />
       </Route>
     </div>

@@ -5,39 +5,6 @@ const initialState = {
   contactProfileIsOpen: false,
 };
 
-export default function contacts(state = initialState, action) {
-  switch (action.type) {
-    case 'contacts/load/start':
-      return {
-        ...state,
-        loading: true,
-      };
-    case 'contacts/load/success':
-      return {
-        ...state,
-        loading: false,
-        items: action.payload,
-      };
-    case 'find/contact':
-      return {
-        ...state,
-        filter: action.payload,
-      };
-    case 'open/profile':
-      return {
-        ...state,
-        contactProfileIsOpen: true,
-      };
-    case 'close/profile':
-      return {
-        ...state,
-        contactProfileIsOpen: false,
-      };
-    default:
-      return state;
-  }
-}
-
 export const loadContacts = () => {
   return (dispatch) => {
     dispatch({
@@ -70,3 +37,36 @@ export const closeContactProfile = () => {
     type: 'close/profile',
   };
 };
+
+export default function contacts(state = initialState, action) {
+  switch (action.type) {
+    case 'contacts/load/start':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'contacts/load/success':
+      return {
+        ...state,
+        loading: false,
+        items: action.payload,
+      };
+    case 'find/contact':
+      return {
+        ...state,
+        filter: action.payload,
+      };
+    case 'open/profile':
+      return {
+        ...state,
+        contactProfileIsOpen: true,
+      };
+    case 'close/profile':
+      return {
+        ...state,
+        contactProfileIsOpen: false,
+      };
+    default:
+      return state;
+  }
+}

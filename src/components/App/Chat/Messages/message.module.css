@@ -1,5 +1,5 @@
 .message-container {
-  height: 86vh;
+  height: 79vh;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -14,26 +14,34 @@
 .sent-message {
   display: inline-block;
   border-radius: 10px 10px 0 10px;
-  background-color: purple;
+  background: linear-gradient(
+    50deg,
+    rgb(73, 99, 211),
+    rgb(59, 64, 199) 10%,
+    rgb(140, 71, 180)
+  );
   max-width: 500px;
   color: white;
   align-self: flex-end;
-  padding: 5px 10px;
+  padding: 20px 20px;
   flex-direction: column;
   box-sizing: content-box;
   margin-bottom: 20px;
   word-break: break-word;
   position: relative;
+  font-size: 15px;
 }
 .message-icon {
   margin-left: 5px;
 }
 .time {
   color: #c0cddc;
+  margin-left: auto;
 }
 .message-info {
-  align-self: center;
+  margin: 10px auto auto;
   font-size: 12px;
+  display: flex;
 }
 .incoming-message-info {
   background-color: azure;
@@ -45,7 +53,6 @@
 .incoming-message {
   display: flex;
   align-self: flex-start;
-  padding: 10px 10px;
 }
 .avatar {
   color: white;

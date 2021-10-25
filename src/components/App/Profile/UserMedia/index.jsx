@@ -5,7 +5,7 @@ function UserMedia(props) {
   return (
     <div className={styles['media-container']}>
       <div className={styles['media-title']}>
-        <h3>Media</h3>
+        <h3 className={styles.h3}>Media</h3>
       </div>
       <div className={styles['media-content-container']}>
         <div className={styles['media-content-file']} />

@@ -4,9 +4,11 @@
   height: 30px;
   margin-bottom: 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   font-size: 18px;
+  border-bottom: #e1e1e1 1px solid;
+  padding: 30px 0;
 }
 .message-search-input {
   width: 200px;
@@ -17,14 +19,11 @@
   border: none;
   outline: none;
 }
-input:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-}
 .search-logo {
   width: 15px;
   height: 15px;
   position: absolute;
-  top: 8px;
+  top: 36px;
   left: 10px;
 }
 
@@ -32,7 +31,7 @@ input:hover {
   width: 15px;
   height: 15px;
   position: absolute;
-  top: 8px;
+  top: 36px;
   right: 10px;
 }
 img {

@@ -10,13 +10,17 @@ function Profile() {
   const openProfile = useSelector(
     (state) => state.contacts.contactProfileIsOpen,
   );
+
   const params = useParams();
+
   const contacts = useSelector((state) => state.contacts.items);
+
   const filteredContacts = contacts.filter(
     (contact) => contact._id === params.id,
   );
+
   if (!openProfile) {
-    return null;
+    return <div className={styles['profile-container']} />;
   }
   return (
     <div

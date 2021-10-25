@@ -9,19 +9,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { newMessageSend } from '../../../../redux/ducks/messages';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function SendingTools(props) {
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
+
   const createMessage = (e) => {
     setMessage(e.target.value);
   };
-  const myId = '5f2ea3801f986a01cefc8bcd';
   const id = useParams().id;
+
   const sendMessage = () => {
-    dispatch(newMessageSend(message, id, myId));
+    dispatch(newMessageSend(message, id, props.myId));
     setMessage('');
   };
+
   return (
     <div className={styles.tools}>
       <div className={styles['add-message']}>
@@ -51,5 +54,7 @@ function SendingTools(props) {
     </div>
   );
 }
-
+SendingTools.propTypes = {
+  myId: PropTypes.string,
+};
 export default SendingTools;

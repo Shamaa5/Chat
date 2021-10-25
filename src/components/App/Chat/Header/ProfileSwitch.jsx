@@ -9,15 +9,18 @@ import { faCog, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function ProfileSwitch() {
   const dispatch = useDispatch();
+
   const contactProfile = useSelector(
     (state) => state.contacts.contactProfileIsOpen,
   );
+
   const closeProfile = () => {
     dispatch(closeContactProfile());
   };
   const openProfile = () => {
     dispatch(openContactProfile());
   };
+
   if (contactProfile) {
     return (
       <div className={styles['settings-logo']}>

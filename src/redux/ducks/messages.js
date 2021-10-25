@@ -95,7 +95,7 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: action.payload.filter((messages) => messages !== undefined),
+        items: action.payload,
       };
     case 'comment/upload/start':
       return {
@@ -129,7 +129,9 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: state.items.filter((message) => message._id !== action.payload),
+        items: state.items.filter((message) => {
+          return message._id !== action.payload;
+        }),
       };
     default:
       return state;

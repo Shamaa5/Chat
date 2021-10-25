@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './searchMessages.module.css';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import MessagePreloader from '../Message/MessagePreloader';
+import MessagePreloader from '../Messages/MessagePreloader';
 
 function HeaderUserInfo() {
   const params = useParams();

@@ -1,24 +1,26 @@
 import React, { useEffect } from 'react';
 import styles from './messages.module.css';
-import Message from './Message';
+import Messages from './Messages';
 import SendingTools from './SendingTools';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../../redux/ducks/messages';
 import Header from './Header';
 
-function Messages() {
+function Chat() {
   const dispatch = useDispatch();
-  const params = useParams();
-  const myId = '5f2ea3801f986a01cefc8bcd';
+
+  const id = useParams().id;
+
+  const myId = useSelector((state) => state.application.profile._id);
 
   useEffect(() => {
-    if (params.id !== undefined) {
-      dispatch(loadMessages(myId, params.id));
+    if (id) {
+      dispatch(loadMessages(myId, id));
     }
-  }, [dispatch, params.id, myId]);
+  }, [dispatch, id, myId]);
 
-  if (!params.id) {
+  if (!id) {
     return (
       <div className={styles['choose-contact']}>
         <h3>Выберите чат в списке слева</h3>
@@ -28,10 +30,10 @@ function Messages() {
   return (
     <div className={styles['messages-container']}>
       <Header />
-      <Message />
-      <SendingTools />
+      <Messages myId={myId} />
+      <SendingTools myId={myId} />
     </div>
   );
 }
 
-export default Messages;
+export default Chat;

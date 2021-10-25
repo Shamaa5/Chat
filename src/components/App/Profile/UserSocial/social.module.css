@@ -1,14 +1,29 @@
 .social-container {
   width: 100%;
-  margin-bottom: 20px;
-  height: 170px;
 }
 .social-title {
   margin-bottom: 30px;
 }
-
-ul {
+.h3 {
+  margin-left: 20px;
+}
+.no-socials {
+  width: 80%;
+  font-size: 15px;
+  color: #575555;
+  margin: auto;
+  padding: 10px 10px;
+  background-color: white;
+}
+.list-of-socials {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 15px;
+  width: 70%;
+  background-color: white;
+  margin: auto auto 20px;
 }
 
 .contacts-preload {
@@ -24,6 +39,7 @@ ul {
 }
 .li {
   cursor: pointer;
+  padding: 15px 15px;
 }
 .social-icons {
   margin-right: 10px;
