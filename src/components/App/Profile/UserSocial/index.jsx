@@ -13,7 +13,7 @@ function UserSocial(props) {
     return (
       <div className={styles['social-container']}>
         <div className={styles['social-title']}>
-          <h3>Social</h3>
+          <h3 className={styles.h3}>Social</h3>
           <div className={styles['no-socials']}>
             <p>Пользователь решил не указывать соцсети :(</p>
           </div>

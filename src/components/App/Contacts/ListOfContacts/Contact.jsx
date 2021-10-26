@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import styles from './contact.module.css';
 import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheck,
+  faCheckDouble,
+  faEllipsisH,
+} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 function Contact(props) {
@@ -21,7 +25,20 @@ function Contact(props) {
           <div className={styles['contact-description']}>
             <div className={styles.name}>{props.contact.fullname}</div>
             <div className={styles['last-message']}>
-              {props.contact.lastMessage?.content}
+              <div className={styles.icon}>
+                {props.contact.lastMessage.read ? (
+                  <FontAwesomeIcon
+                    icon={faCheckDouble}
+                    className={styles['message-icon']}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className={styles['message-icon']}
+                  />
+                )}
+              </div>
+              <div className={styles.lastMessageText}>{props.contact.lastMessage?.content}</div>
             </div>
           </div>
           <div className={styles['container-for-hover']}>

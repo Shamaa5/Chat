@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './searchMessages.module.css';
-import { SetFilterMessage } from '../../../../redux/ducks/messages';
+import { setFilterMessage } from '../../../../redux/ducks/messages';
 import { useDispatch, useSelector } from 'react-redux';
 
 function SearchMessages() {
   const dispatch = useDispatch();
   const handleFindMessage = (e) => {
-    dispatch(SetFilterMessage(e.target.value));
+    dispatch(setFilterMessage(e.target.value));
   };
   const filter = useSelector((state) => state.messages.filter);
   return (

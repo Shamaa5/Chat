@@ -10,7 +10,9 @@ export const loadMessages = (myId, id) => {
     dispatch({
       type: 'messages/load/start',
     });
-    fetch(`https://api.intocode.ru:8001/api/messages/${myId}/${id}`)
+    fetch(
+      `https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/${id}`,
+    )
       .then((response) => response.json())
       .then((json) => {
         dispatch({
@@ -19,6 +21,28 @@ export const loadMessages = (myId, id) => {
         });
         scroll();
       });
+  };
+};
+
+export const setFilterMessage = (text) => {
+  return {
+    type: 'find/message',
+    payload: text,
+  };
+};
+export const deleteMessage = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'message/deleting/start',
+    });
+    fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
+      method: 'DELETE',
+    }).then(() => {
+      dispatch({
+        type: 'message/deleting/success',
+        payload: id,
+      });
+    });
   };
 };
 export const newMessageSend = (content, id, myId) => {
@@ -61,28 +85,6 @@ export const newMessageSend = (content, id, myId) => {
       });
   };
 };
-export const SetFilterMessage = (text) => {
-  return {
-    type: 'find/message',
-    payload: text,
-  };
-};
-export const deleteMessage = (id) => {
-  return (dispatch) => {
-    dispatch({
-      type: 'messages/delete/start',
-    });
-    fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
-      method: 'DELETE',
-    }).then(() => {
-      dispatch({
-        type: 'messages/delete/success',
-        payload: id,
-      });
-    });
-  };
-};
-
 export default function messages(state = initialState, action) {
   switch (action.type) {
     case 'messages/load/start':
@@ -123,15 +125,11 @@ export default function messages(state = initialState, action) {
     case 'message/deleting/start':
       return {
         ...state,
-        loading: true,
       };
     case 'message/deleting/success':
       return {
         ...state,
-        loading: false,
-        items: state.items.filter((message) => {
-          return message._id !== action.payload;
-        }),
+         items: state.items.filter((message) => message._id !== action.payload),
       };
     default:
       return state;

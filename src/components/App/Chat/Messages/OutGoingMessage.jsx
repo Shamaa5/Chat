@@ -10,13 +10,13 @@ import {
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteMessage } from '../../../../redux/ducks/messages';
-import { useParams } from 'react-router-dom';
 
 function OutGoingMessage(props) {
-  const params = useParams().id;
   const dispatch = useDispatch();
+  const id = props.message._id
+
   const handleDeleteMessage = (id) => {
-    dispatch(deleteMessage(params, id));
+    dispatch(deleteMessage(id));
   };
   return (
     <div className={styles['sent-message']} key={props.message._id + 'message'}>
@@ -45,7 +45,7 @@ function OutGoingMessage(props) {
       </div>
       <div
         className={styles['delete-message']}
-        onClick={() => handleDeleteMessage(props.message._id)}
+        onClick={() => handleDeleteMessage(id)}
       >
         Х
       </div>
