@@ -65,6 +65,7 @@ export const newMessageSend = (content, id, myId) => {
       body: JSON.stringify({
         content: content,
         time: new Date(),
+        sending: false,
         type: 'text',
         tempId: tempId,
         contactId: id,
@@ -129,7 +130,7 @@ export default function messages(state = initialState, action) {
     case 'message/deleting/success':
       return {
         ...state,
-         items: state.items.filter((message) => message._id !== action.payload),
+        items: state.items.filter((message) => message._id !== action.payload),
       };
     default:
       return state;

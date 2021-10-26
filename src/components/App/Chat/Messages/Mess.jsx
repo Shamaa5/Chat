@@ -8,7 +8,7 @@ function Mess(props) {
     return (
       <OutGoingMessage
         message={props.message}
-        key={props.message._id + 'outgoing'}
+        key={props.message._id + Math.random() * 10}
       />
     );
   }

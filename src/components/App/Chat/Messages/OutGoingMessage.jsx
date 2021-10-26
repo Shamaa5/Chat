@@ -8,29 +8,21 @@ import {
   faHourglass,
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { deleteMessage } from '../../../../redux/ducks/messages';
+import DeleteMessage from './DeleteMessage';
 
 function OutGoingMessage(props) {
-  const dispatch = useDispatch();
-  const id = props.message._id
-
-  const handleDeleteMessage = (id) => {
-    dispatch(deleteMessage(id));
-  };
   return (
     <div className={styles['sent-message']} key={props.message._id + 'message'}>
       <div className={styles['message-content']}>{props.message.content}</div>
       <div className={styles['message-info']}>
         <div className={styles.time}>
           {dayjs(props.message.time).format('HH:mm')}
-          {props.message.sending && (
+          {props.message.sending ? (
             <FontAwesomeIcon
               icon={faHourglass}
               className={styles['message-icon']}
             />
-          )}
-          {props.message.read ? (
+          ) : props.message.read ? (
             <FontAwesomeIcon
               icon={faCheckDouble}
               className={styles['message-icon']}
@@ -43,12 +35,7 @@ function OutGoingMessage(props) {
           )}
         </div>
       </div>
-      <div
-        className={styles['delete-message']}
-        onClick={() => handleDeleteMessage(id)}
-      >
-        Х
-      </div>
+      <DeleteMessage message={props.message} />
     </div>
   );
 }
